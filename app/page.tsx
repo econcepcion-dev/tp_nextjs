@@ -5,17 +5,21 @@ import { useState, useEffect  } from 'react';
 import Image from "next/image";
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/20/solid';
 
- export const config = {
-    endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
-    projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
-    platform: "com.tp",
-  };
+// export const config = {
+//    endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
+//    projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
+//    platform: "com.tp",
+//  };
 
    const client = new Client();
 
-client
-.setEndpoint(config.endpoint!)
-.setProject(config.projectId!);
+ client
+.setEndpoint('https://cloud.appwrite.io/v1')
+.setProject('6776d5e9000d4782fcbb')
+
+//client
+//.setEndpoint(config.endpoint!)
+//.setProject(config.projectId!);
 
 //.setPlatform(config.platform!);
 

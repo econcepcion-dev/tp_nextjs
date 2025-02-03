@@ -13,9 +13,9 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/react/20/solid';
 
    const client = new Client();
 
- client
-.setEndpoint('https://cloud.appwrite.io/v1')
-.setProject('6776d5e9000d4782fcbb')
+client
+.setEndpoint(config.endpoint!)
+.setProject(config.projectId!);
 
 //.setPlatform(config.platform!);
 

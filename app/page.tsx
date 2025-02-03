@@ -32,8 +32,8 @@ interface RecoveryQuery {
 
 const ChangePassword = ()  => {
   const searchParams = useSearchParams();
-  let userId = searchParams.get("userId");
-  let secret = searchParams.get("secret");
+  const userId = searchParams.get("userId");
+  const secret = searchParams.get("secret");
 
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');

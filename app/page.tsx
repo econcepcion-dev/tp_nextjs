@@ -5,21 +5,17 @@ import { useState, useEffect  } from 'react';
 import Image from "next/image";
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/20/solid';
 
-// export const config = {
-//    endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
-//    projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
-//    platform: "com.tp",
-//  };
+ //export const config = {
+ //   endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
+ //   projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
+ //   platform: "com.tp",
+ // };
 
    const client = new Client();
 
  client
 .setEndpoint('https://cloud.appwrite.io/v1')
 .setProject('6776d5e9000d4782fcbb')
-
-//client
-//.setEndpoint(config.endpoint!)
-//.setProject(config.projectId!);
 
 //.setPlatform(config.platform!);
 
@@ -31,9 +27,9 @@ interface RecoveryQuery {
 }
 
 const ChangePassword = ()  => {
-  const searchParams = useSearchParams();
-  const userId = searchParams.get("userId");
-  const secret = searchParams.get("secret");
+  //const searchParams = useSearchParams();
+  //const userId = searchParams.get("userId");
+  //const secret = searchParams.get("secret");
 
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -43,6 +39,11 @@ const ChangePassword = ()  => {
 
   const [isNewPasswordVisible, setIsNewPasswordVisible] = useState(false);  // To toggle visibility for new password
   const [isRepeatPasswordVisible, setIsRepeatPasswordVisible] = useState(false);  // To toggle visibility for repeat password
+
+  const queryString = typeof window !== 'undefined' ? window.location.search : '';
+  const urlParams = new URLSearchParams(queryString);
+  const userId = urlParams.get('userId');
+  const secret = urlParams.get('secret');
 
    useEffect(() => {
     // Check if passwords match every time the user types
@@ -92,6 +93,14 @@ const ChangePassword = ()  => {
    
       <div className="flex justify-center items-center min-h-screen bg-gray-100">
        <div className="w-full max-w-sm p-6 bg-white rounded-3xl shadow-lg">
+       
+        <p>
+          parameter1 is userId value is: {userId}
+        </p>
+        <p>
+          parameter1 is secret: {secret}
+        </p>
+       
         <h1 className="text-3xl font-rubik-bold text-black-300 text-center mt-2">TRIPELAGO</h1>
            <div className="flex justify-center mb-6">
              <Image src="/onboarding_tp.png" alt="" width={150} height={150} />

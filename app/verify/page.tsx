@@ -70,13 +70,13 @@ const ChangePassword = ()  => {
       <div className="flex justify-center items-center min-h-screen bg-gray-100">
        <div className="w-full max-w-sm  p-6 bg-white rounded-3xl shadow-lg">
        
-        <p>
+        {/*<p>
           parameter1 is userId value is: {userId}
         </p>
         <p>
           parameter1 is secret: {secret}
         </p>
-       
+       */}
         <h1 className="text-3xl font-rubik-bold text-black-300 text-center mt-2">TRIPELAGO</h1>
            <div className="flex justify-center mb-6">
              <Image src="/onboarding_tp.png" alt="" width={150} height={150} />
